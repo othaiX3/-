@@ -438,7 +438,6 @@ async function deleteDoc(){
   try{await api('DELETE','documents?id=eq.'+editId);closeModal();await loadDocs();toast('ລຶບສຳເລັດ ✓');}
   catch(e){toast('ລຶບບໍ່ສຳເລັດ',true);}
 }
-
 function exportCSV(){
   const h=['ວັນທີ','ເລກທີ','ຜູ້ສົ່ງ','ເນື້ອໃນ','ໝາຍເຫດ','ປະເພດ'];
   const rows=docs.map(d=>[d.doc_date,d.doc_num,'"'+(d.sender||'')+'"','"'+(d.content||'')+'"',d.note||'',d.doc_type||'']);
